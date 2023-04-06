@@ -33,3 +33,9 @@ exports.deleteAUserService = async (id) => {
     const result = await UserModel.deleteOne({ _id: id });
     return result;
 };
+
+// get user by email-------------
+exports.getUserByEmailServices=async(email)=>{
+    const result = await UserModel.findOne({email : email})
+    return result
+}

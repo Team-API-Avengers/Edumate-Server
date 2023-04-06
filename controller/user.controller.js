@@ -1,4 +1,4 @@
-const { createAUserServices, getAllUserServices, getAUserByIdServices, updateAUserServices, deleteAUserService } = require("../services/user.services");
+const { createAUserServices, getAllUserServices, getAUserByIdServices, updateAUserServices, deleteAUserService, getUserByEmailServices } = require("../services/user.services");
 
 
 // create a user -------
@@ -111,3 +111,25 @@ exports.deleteAUser = async (req, res, next) => {
 
 
 };
+
+// get user by email 
+exports.getUserByEmail=async(req, res, next)=>{
+    try {
+        const email = req.params.email;
+        console.log(email)
+        const result = await getUserByEmailServices(email);
+
+        res.status(200).json({
+            status: 'success',
+            massage: "Data inserted Successfully!",
+            data: result
+        })
+    }
+    catch (error) {
+        res.status(400).json({
+            status: 'error',
+            massage: "Data inserted Error",
+            error: error.message
+        })
+    }
+}
