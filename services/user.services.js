@@ -19,3 +19,17 @@ exports.getAUserByIdServices = async (id) => {
     const result = await UserModel.findOne({ _id: id });
     return result;
 };
+
+
+// update a User ---------
+exports.updateAUserServices = async (id, data) => {
+    const result = await UserModel.updateOne({ _id: id }, { $set: data });
+    return result;
+};
+
+
+// delete a User --------
+exports.deleteAUserService = async (id) => {
+    const result = await UserModel.deleteOne({ _id: id });
+    return result;
+};
