@@ -8,7 +8,7 @@ const app = require("./app");
 // DBConnect(); initial code----
 
 // mongoose.connect('mongodb://localhost:27017/').then(() => {
-mongoose.connect(process.env.DATABASE).then(() => {
+mongoose.connect(process.env.DB_ATLAS).then(() => {
     console.log("Database Connection successfully established".red.bold);
 });
 
