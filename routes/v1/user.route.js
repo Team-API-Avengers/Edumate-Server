@@ -8,6 +8,8 @@ router.route("/")
 
 router.route("/:id")
     .get(userController.getAUserById)
+    .patch(userController.updateAUser)
+    .delete(userController.deleteAUser)
 
 
 
