@@ -130,21 +130,21 @@ exports.deleteTutor = async (req, res, next) => {
 };
 
 // get category -----------------
-// exports.getTutorByCategory=async(req, res, next)=>{
-//     try {
-//         const result = await getTutorByCategoryServices()
-//         res.status(200).json({
-//             status: 'success',
-//             massage: "Tutor deleted Successfully!",
-//             data: result
-//         })
-//     }
-//     catch (error) {
-//         res.status(400).json({
-//             status: 'error',
-//             massage: "Tutor updated Error",
-//             error: error.message
-//         })
-//     }
-// }
+/* exports.getTutorByCategory=async(req, res, next)=>{
+    try {
+        const result = await getTutorByCategoryServices()
+        res.status(200).json({
+            status: 'success',
+            massage: "Tutor deleted Successfully!",
+            data: result
+        })
+    }
+    catch (error) {
+        res.status(400).json({
+            status: 'error',
+            massage: "Tutor updated Error",
+            error: error.message
+        })
+    }
+} */
 

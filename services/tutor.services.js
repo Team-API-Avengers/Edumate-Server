@@ -49,5 +49,5 @@ exports.deleteTutorService = async (id) => {
     return result
 } */
 
-// { age: { $lt: 'not a number' } }
+
 
