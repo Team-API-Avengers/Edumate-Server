@@ -22,6 +22,10 @@ const tutorSchema = new mongoose.Schema({
             massage: "background can't be others."
         }
     },
+    bio: {
+        type: String,
+        required: [true, "Please provide a bio"],
+    },
     phone: {
         type: Number,
         required: true,
