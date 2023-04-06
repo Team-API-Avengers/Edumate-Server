@@ -16,6 +16,6 @@ exports.getAllUserServices = async () => {
 
 // get a User By Id ------
 exports.getAUserByIdServices = async (id) => {
-    const result = await UserModel.find({ _id: id });
+    const result = await UserModel.findOne({ _id: id });
     return result;
 };
