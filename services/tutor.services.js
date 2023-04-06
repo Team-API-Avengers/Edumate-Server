@@ -15,10 +15,10 @@ exports.getTutorsService = async () => {
 
 
 // get Tutor by background --------------
-// exports.getTutorsCategoryService = async (category) => {
-//     const result = await Tutor.find({ background: category });
-//     return result;
-// };
+exports.getTutorsCategoryService = async (category) => {
+    const result = await Tutor.find({ background: category });
+    return result;
+};
 
 
 // get Tutor by id ----------------------
@@ -37,8 +37,8 @@ exports.updateTutorService = async (tutorId, data) => {
 };
 
 // delete tutor service ---------------
-// exports.deleteTutorService = async (id) => {
-//     const result = await Tutor.deleteOne({ _id: id })
-//     return result
-// };
+exports.deleteTutorService = async (id) => {
+    const result = await Tutor.deleteOne({ _id: id })
+    return result
+};
 

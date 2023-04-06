@@ -1,6 +1,6 @@
 // const Product = require("../models/Product");
 const Tutor = require("../models/Tutor");
-const { createTutorService, getTutorsService, getTutorByService, updateTutorService } = require("../services/tutor.services");
+const { createTutorService, getTutorsService, getTutorByService, updateTutorService, deleteTutorService, getTutorsCategoryService } = require("../services/tutor.services");
 
 
 // create a new createTutor
@@ -45,23 +45,23 @@ exports.getTutor = async (req, res, next) => {
 
 
 // ----------------get Tutor by background ------------
-// exports.getTutorByCategory = async (req, res, next) => {
-//     try {
-//         const result = await getTutorsCategoryService(req.params.background)
+exports.getTutorByCategory = async (req, res, next) => {
+    try {
+        const result = await getTutorsCategoryService(req.params.background)
 
-//         res.status(200).json({
-//             status: 'success',
-//             massage: "get Tutor by background find Successfully",
-//             data: result
-//         })
-//     } catch (error) {
-//         res.status(400).json({
-//             status: 'error',
-//             massage: "get Tutor by background Error",
-//             data: result
-//         })
-//     }
-// };
+        res.status(200).json({
+            status: 'success',
+            massage: "get Tutor by background find Successfully",
+            data: result
+        })
+    } catch (error) {
+        res.status(400).json({
+            status: 'error',
+            massage: "get Tutor by background Error",
+            data: result
+        })
+    }
+};
 
 
 // ------------- get Tutor by id -------------------
@@ -110,22 +110,22 @@ exports.updateTutor = async (req, res, next) => {
 };
 
 // delete a tutor -----------------
-// exports.deleteTutor = async (req, res, next) => {
-//     try {
-//         const id = req.params.id
-//         const result = await deleteTutorService(id)
-//         res.status(200).json({
-//             status: 'success',
-//             massage: "Tutor deleted Successfully!",
-//             data: result
-//         })
-//     }
-//     catch (error) {
-//         res.status(400).json({
-//             status: 'error',
-//             massage: "Tutor updated Error",
-//             error: error.message
-//         })
-//     }
-// };
+exports.deleteTutor = async (req, res, next) => {
+    try {
+        const id = req.params.id
+        const result = await deleteTutorService(id)
+        res.status(200).json({
+            status: 'success',
+            massage: "Tutor deleted Successfully!",
+            data: result
+        })
+    }
+    catch (error) {
+        res.status(400).json({
+            status: 'error',
+            massage: "Tutor updated Error",
+            error: error.message
+        })
+    }
+};
 

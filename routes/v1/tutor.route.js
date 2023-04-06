@@ -8,18 +8,16 @@ router.route("/")
     .get(tutorController.getTutor)
     .post(tutorController.createTutor)
 
-    // get tutor by there background ----
-// router.route("/instructor/:background")
-// .get(tutorController.getTutorByCategory)
+// get tutor by there background ----
+router.route("/instructor/:background")
+    .get(tutorController.getTutorByCategory)
 
 
 // update a tutor-------
 router.route("/:id")
     .get(tutorController.getTutorById)
     .patch(tutorController.updateTutor)
-    // .delete(tutorController.deleteTutor)
-
-
+    .delete(tutorController.deleteTutor)
 
 
 
