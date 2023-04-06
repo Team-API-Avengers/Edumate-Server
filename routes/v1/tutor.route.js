@@ -14,10 +14,10 @@ router.route("/")
 
 
 // update a tutor-------
-// router.route("/:id")
-//     .get(tutorController.getTutorById)
-//     .patch(tutorController.updateTutor)
-//     .delete(tutorController.deleteTutor)
+router.route("/:id")
+    .get(tutorController.getTutorById)
+    // .patch(tutorController.updateTutor)
+    // .delete(tutorController.deleteTutor)
 
 
 

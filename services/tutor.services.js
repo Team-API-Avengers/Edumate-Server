@@ -22,10 +22,10 @@ exports.getTutorsService = async () => {
 
 
 // get Tutor by id ----------------------
-// exports.getTutorByService = async (id) => {
-//     const result = await Tutor.findOne({ _id: id });
-//     return result;
-// };
+exports.getTutorByService = async (id) => {
+    const result = await Tutor.findOne({ _id: id });
+    return result;
+};
 
 
 
