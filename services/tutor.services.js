@@ -8,10 +8,10 @@ exports.createTutorService = async (data) => {
 };
 
 // get Tutor services --------------
-// exports.getTutorsService = async () => {
-//     const results = await Tutor.find({});
-//     return results;
-// };
+exports.getTutorsService = async () => {
+    const results = await Tutor.find({});
+    return results;
+};
 
 
 // get Tutor by background --------------

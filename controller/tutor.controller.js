@@ -1,6 +1,6 @@
 // const Product = require("../models/Product");
 const Tutor = require("../models/Tutor");
-const { createTutorService} = require("../services/tutor.services");
+const { createTutorService, getTutorsService} = require("../services/tutor.services");
 
 
 // create a new createTutor
@@ -24,24 +24,24 @@ exports.createTutor = async (req, res, next) => {
 };
 
 // ----------------get all tutor------------
-// exports.getTutor = async (req, res, next) => {
-//     try {
-//         // const products = await Product.find({})
-//         const result = await getTutorsService();
+exports.getTutor = async (req, res, next) => {
+    try {
+        // const products = await Product.find({})
+        const result = await getTutorsService();
 
-//         res.status(200).json({
-//             status: 'success',
-//             massage: "Data find Successfully",
-//             data: result
-//         })
-//     } catch (error) {
-//         res.status(400).send.json({
-//             status: 'error',
-//             massage: "product not found",
-//             error: error.message
-//         })
-//     }
-// };
+        res.status(200).json({
+            status: 'success',
+            massage: "Data find Successfully",
+            data: result
+        })
+    } catch (error) {
+        res.status(400).send.json({
+            status: 'error',
+            massage: "product not found",
+            error: error.message
+        })
+    }
+};
 
 
 // ----------------get Tutor by background ------------
