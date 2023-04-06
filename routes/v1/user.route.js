@@ -6,7 +6,8 @@ router.route("/")
     .post(userController.createAUser)
     .get(userController.getAllUser)
 
-
+router.route("/:id")
+    .get(userController.getAUserById)
 
 
 
