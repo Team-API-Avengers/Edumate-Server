@@ -31,10 +31,10 @@ exports.getTutorByService = async (id) => {
 
 
 // update tutor service-------------------
-// exports.updateTutorService = async (tutorId, data) => {
-//     const result = await Tutor.updateOne({ _id: tutorId }, { $set: data }, { runValidators: true });
-//     return result;
-// };
+exports.updateTutorService = async (tutorId, data) => {
+    const result = await Tutor.updateOne({ _id: tutorId }, { $set: data }, { runValidators: true });
+    return result;
+};
 
 // delete tutor service ---------------
 // exports.deleteTutorService = async (id) => {
