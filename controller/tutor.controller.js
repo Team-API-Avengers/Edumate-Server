@@ -1,6 +1,6 @@
 // const Product = require("../models/Product");
 const Tutor = require("../models/Tutor");
-const { createTutorService, getTutorsService} = require("../services/tutor.services");
+const { createTutorService, getTutorsService, getTutorByService} = require("../services/tutor.services");
 
 
 // create a new createTutor
@@ -65,23 +65,23 @@ exports.getTutor = async (req, res, next) => {
 
 
 // ------------- get Tutor by id -------------------
-// exports.getTutorById = async (req, res, next) => {
-//     try {
-//         const result = await getTutorByService(req.params.id)
+exports.getTutorById = async (req, res, next) => {
+    try {
+        const result = await getTutorByService(req.params.id)
 
-//         res.status(200).json({
-//             status: 'success',
-//             massage: "get Tutor by id Successfully!",
-//             data: result
-//         })
-//     } catch (error) {
-//         res.status(400).json({
-//             status: 'error',
-//             massage: "get Tutor by id Error",
-//             data: error.massage
-//         })
-//     }
-// };
+        res.status(200).json({
+            status: 'success',
+            massage: "get Tutor by id Successfully!",
+            data: result
+        })
+    } catch (error) {
+        res.status(400).json({
+            status: 'error',
+            massage: "get Tutor by id Error",
+            data: error.massage
+        })
+    }
+};
 
 
 
