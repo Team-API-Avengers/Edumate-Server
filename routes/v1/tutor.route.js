@@ -5,7 +5,7 @@ const tutorController = require("../../controller/tutor.controller");
 
 // tutor route started--------
 router.route("/")
-    // .get(tutorController.getTutor)
+    .get(tutorController.getTutor)
     .post(tutorController.createTutor)
 
     // get tutor by there background ----
