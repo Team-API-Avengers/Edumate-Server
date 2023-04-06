@@ -42,3 +42,12 @@ exports.deleteTutorService = async (id) => {
     return result
 };
 
+// get tutor by category ------------
+
+/* exports.getTutorByCategoryServices=async()=>{
+    const result = await Tutor.find({background : {$eq : "background"}})
+    return result
+} */
+
+
+
