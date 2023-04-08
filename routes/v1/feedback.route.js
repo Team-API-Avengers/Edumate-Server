@@ -10,6 +10,9 @@ router.route("/")
 router.route("/:email")
 .get(feedBackController.getFeedbackByEmail)
 
+router.route("/:id")
+.delete(feedBackController.deleteAfeedback)
+.patch(feedBackController.updateAfeedback)
 
 
 module.exports = router;
