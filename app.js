@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const tutorRouter = require("./routes/v1/tutor.route");
 const userRouter = require("./routes/v1/user.route");
+const feedBackRouter = require("./routes/v1/feedback.route")
  
 
 
@@ -12,11 +13,14 @@ app.use(express.json());
 app.use(cors());
 
 
-// get all tutor
+// tutor Api-----------------------------
 app.use("/api/v1/tutor", tutorRouter)
 
-// get all users
+// user api ------------------------------
 app.use("/api/v1/user", userRouter)
+
+// feedback api ----------------------------
+app.use("/api/v1/feedback",feedBackRouter)
 
 // ---------- Happy Server ----------
 app.get("/", (req, res) => {
