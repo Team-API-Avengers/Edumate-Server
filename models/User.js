@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, "Please provide a name."],
         trim: true, // without spaces
         minLenght: [3, "Name must be at least 3 characters."],
         maxLenght: [20, "Name is too long."],
@@ -23,12 +22,11 @@ const userSchema = new mongoose.Schema({
     image: {
         type: String,
         required: true,
-        unique: [true, "Your image must be an unique"]
+        
     },
     phone: {
         type: Number,
         required: true,
-        unique: [true, "Please provide a unique phone number."],
     },
     role: {
         type: String,
@@ -38,10 +36,7 @@ const userSchema = new mongoose.Schema({
             massage: "role can't be others."
         }
     },
-    location: {
-        type: String,
-        trim: true, // without spaces
-    }
+  
 });
 
 const UserModel = mongoose.model('UserModel', userSchema)
