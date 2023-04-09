@@ -17,7 +17,7 @@ const tutorSchema = new mongoose.Schema({
         type: String,
         required: true,
         enum: {
-            values: ["Science", "Humanities ", "Commerce"],
+            values: ["Science", "Arts", "Commerce"],
             massage: "background can't be others."
         }
     },
@@ -45,6 +45,10 @@ const tutorSchema = new mongoose.Schema({
             values: ["Teacher", "Student", "Admin"],
             massage: "role can't be others."
         }
+    },
+    fee: {
+        type: Number,
+        required : true
     },
     image: {
         type: String,
