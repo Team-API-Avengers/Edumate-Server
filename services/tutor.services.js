@@ -49,5 +49,11 @@ exports.deleteTutorService = async (id) => {
     return result
 } */
 
+// search tutors by location ---------
 
+exports.getTutorByLocationServices = async (location) => {
+    console.log(location);
+    const result = await Tutor.find({ location: location })
+    return result
+};
 

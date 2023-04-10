@@ -1,6 +1,6 @@
 // const Product = require("../models/Product");
 const Tutor = require("../models/Tutor");
-const { createTutorService, getTutorsService, getTutorByService, updateTutorService, deleteTutorService, getTutorsCategoryService, getTutorByCategoryServices } = require("../services/tutor.services");
+const { createTutorService, getTutorsService, getTutorByService, updateTutorService, deleteTutorService, getTutorsCategoryService, getTutorByCategoryServices, getTutorByLocationServices } = require("../services/tutor.services");
 
 
 // create a new createTutor
@@ -148,4 +148,34 @@ exports.deleteTutor = async (req, res, next) => {
     }
 } */
 
-console.log("ashik")
+
+
+
+
+// search tutor by location ---
+exports.getTutorByLocation = async (req, res, next) => {
+
+    try {
+        console.log(req.body);
+
+        const result = await getTutorByLocationServices(req.body)
+        res.status(200).json({
+            status: 'success',
+            massage: "Tutor search Successfully!",
+            data: result
+        })
+    }
+    catch (error) {
+        res.status(400).json({
+            status: 'error',
+            massage: "Tutor search Not Found.",
+            error: error.message
+        })
+    }
+}
+
+
+
+
+
+
