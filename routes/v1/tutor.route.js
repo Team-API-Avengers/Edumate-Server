@@ -22,9 +22,8 @@ router.route("/:id")
 
 // search tutors from location -----
 
-router.route("/location/search")
+router.route("/location/:search")
     .get(tutorController.getTutorByLocation)
 
-console.log("new");
 
 module.exports = router;
