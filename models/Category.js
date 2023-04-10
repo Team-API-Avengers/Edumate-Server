@@ -4,7 +4,6 @@
 //     background:{
 //         type: String,
 //         required: true,
-        
 //     }
 // });
 
