@@ -32,7 +32,7 @@ const tutorSchema = new mongoose.Schema({
     location: {
         type: String,
         required: true,
-        trim: true, // without spaces
+        trim: true, // without spaces,
     },
     experience: {
         type: Number,
@@ -48,13 +48,13 @@ const tutorSchema = new mongoose.Schema({
     },
     fee: {
         type: Number,
-        required : true
+        required: true
     },
     image: {
         type: String,
         required: true,
     }
-}, {
+},  {
     timestamps: true,
 });
 

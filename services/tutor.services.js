@@ -29,7 +29,6 @@ exports.getTutorByService = async (id) => {
 
 
 
-
 // update tutor service-------------------
 exports.updateTutorService = async (tutorId, data) => {
     const result = await Tutor.updateOne({ _id: tutorId }, { $set: data }, { runValidators: true });
@@ -49,10 +48,11 @@ exports.deleteTutorService = async (id) => {
     return result
 } */
 
-// search tutors by location ---------
 
+
+
+// search tutors by location ---------
 exports.getTutorByLocationServices = async (location) => {
-    console.log(location);
     const result = await Tutor.find({ location: location })
     return result
 };
