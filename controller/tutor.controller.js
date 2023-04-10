@@ -156,9 +156,9 @@ exports.deleteTutor = async (req, res, next) => {
 exports.getTutorByLocation = async (req, res, next) => {
 
     try {
-        console.log(req.body);
+        const searchItem = req.params.search
 
-        const result = await getTutorByLocationServices(req.body)
+        const result = await getTutorByLocationServices(searchItem)
         res.status(200).json({
             status: 'success',
             massage: "Tutor search Successfully!",
