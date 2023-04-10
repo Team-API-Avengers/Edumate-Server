@@ -25,6 +25,6 @@ router.route("/:id")
 router.route("/location/search")
     .get(tutorController.getTutorByLocation)
 
-
+console.log("new");
 
 module.exports = router;
