@@ -20,6 +20,11 @@ router.route("/:id")
     .delete(tutorController.deleteTutor)
 
 
+// search tutors from location -----
+
+router.route("/location/search")
+    .get(tutorController.getTutorByLocation)
+
 
 
 module.exports = router;
