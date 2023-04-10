@@ -22,3 +22,15 @@ exports.updateBlogService = async (id, data) => {
     return result
 }
 
+// delete a blog post ----
+exports.deleteBlogService = async (id) => {
+    const result = await BlogSchema.deleteOne({ _id: id });
+    return result;
+}
+
+
+// get a single blog post ---
+exports.getASingleBlogService = async (id) => {
+    const result = await BlogSchema.findOne({ _id: id });
+    return result;
+}
