@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const tutorSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, "Please provide a name."],
         trim: true, // without spaces
         minLenght: [3, "Name must be at least 3 characters."],
         maxLenght: [20, "Name is too long."],
@@ -18,7 +17,7 @@ const tutorSchema = new mongoose.Schema({
         type: String,
         required: true,
         enum: {
-            values: ["Science", "Humanities ", "Commerce"],
+            values: ["Science", "Arts", "Commerce"],
             massage: "background can't be others."
         }
     },
@@ -29,7 +28,6 @@ const tutorSchema = new mongoose.Schema({
     phone: {
         type: Number,
         required: true,
-        unique: [true, "Please provide a unique phone number."],
     },
     location: {
         type: String,
@@ -48,9 +46,12 @@ const tutorSchema = new mongoose.Schema({
             massage: "role can't be others."
         }
     },
+    fee: {
+        type: Number,
+        required : true
+    },
     image: {
         type: String,
-        unique: true,
         required: true,
     }
 }, {
