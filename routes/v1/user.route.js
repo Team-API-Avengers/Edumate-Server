@@ -17,4 +17,10 @@ router.route("/useremail/:email")
 router.route("/dash/student")
 .get(userController.getUserAsStudent)
 
+router.route("/dash/teacher")
+.get(userController.getUserAsTeacher)
+
+router.route("/dash/admin")
+.get(userController.getUserAsAdmin)
+
 module.exports = router;
