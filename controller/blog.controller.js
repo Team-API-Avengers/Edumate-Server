@@ -29,7 +29,7 @@ exports.getAllBlog = async (req, res, next) => {
 
         res.status(200).json({
             status: 'success',
-            massage: "Data inserted Successfully!",
+            massage: "Data getting Successfully!",
             data: result
         })
     } catch (error) {

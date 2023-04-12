@@ -1,4 +1,4 @@
-const { createBookingServices, getAllBookingsServices, getABookingInfoServices, deleteBookingServices } = require("../services/booking.services");
+const { createBookingServices, getAllBookingsServices, getABookingInfoServices, deleteBookingServices, editAbookingServices } = require("../services/booking.services");
 
 // create a booking controller --
 exports.createBooking = async (req, res, next) => {
@@ -59,7 +59,7 @@ exports.getABookingInfo = async (req, res, next) => {
     }
 };
 
-
+// delete a booking --------------------------
 exports.deleteBooking = async (req, res, next) => {
     try {
         const result = await deleteBookingServices(req.params.id);
@@ -76,3 +76,24 @@ exports.deleteBooking = async (req, res, next) => {
         })
     }
 };
+
+// update a booking ----------------------
+exports.updateAbooking=async(req, res, next)=>{
+    try {
+    const id = req.params.id 
+    const body = req.body
+    const result =await editAbookingServices(id,body)   
+    res.status(200).json({
+        status: 'success',
+        massage: "Delete Booking",
+        data: result
+    })
+    } 
+    catch (error) {
+        res.status(400).json({
+            status: "error",
+            massage: "Delete Booking Error",
+            error: error.message
+        })
+    }
+}
