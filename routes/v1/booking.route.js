@@ -12,5 +12,5 @@ router.route("/:id")
     .delete(bookingController.deleteBooking)
 
 
-
+// export bookings routes
 module.exports = router;
