@@ -16,8 +16,14 @@ exports.getAllBookingsServices = async () => {
 
 
 // get a booking info  -----
-
 exports.getABookingInfoServices = async (id) => {
     const result = await Booking.findOne({ _id: id });
     return result;
-}
+};
+
+
+// delete a booking  ----
+exports.deleteBookingServices = async (id) => {
+    const result = await Booking.deleteOne({ _id: id });
+    return result;
+};
