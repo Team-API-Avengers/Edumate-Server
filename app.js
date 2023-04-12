@@ -29,8 +29,8 @@ app.use("/api/v1/blogs", blogRouter)
 app.use("/api/v1/feedback", feedBackRouter)
 
 
-// booking routes -------------------
-app.use("/api/v1/bookings", bookingRouter)
+
+
 
 
 
