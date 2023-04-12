@@ -9,7 +9,8 @@ router.route("/")
 
 router.route("/:id")
     .get(bookingController.getABookingInfo)
+    .delete(bookingController.deleteBooking)
 
 
-
+// export bookings routes
 module.exports = router;
