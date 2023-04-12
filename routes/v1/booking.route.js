@@ -7,7 +7,8 @@ router.route("/")
     .get(bookingController.getAllBookings)
 
 
-
+router.route("/:id")
+    .get(bookingController.getABookingInfo)
 
 
 

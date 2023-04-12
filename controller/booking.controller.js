@@ -1,4 +1,4 @@
-const { createBookingServices, getAllBookingsServices } = require("../services/booking.services");
+const { createBookingServices, getAllBookingsServices, getABookingInfoServices } = require("../services/booking.services");
 
 // create a booking controller --
 exports.createBooking = async (req, res, next) => {
@@ -27,7 +27,7 @@ exports.getAllBookings = async (req, res, next) => {
         res.status(200).json({
             status: 'success',
             massage: "Create Booking Error",
-            error: results
+            data: results
         })
     } catch (error) {
         res.status(400).json({
@@ -37,4 +37,24 @@ exports.getAllBookings = async (req, res, next) => {
         })
     }
 
+};
+
+
+
+// get a specific booking info --
+exports.getABookingInfo = async (req, res, next) => {
+    try {
+        const results = await getABookingInfoServices(req.params.id);
+        res.status(200).json({
+            status: 'success',
+            massage: "Get A Booking Info",
+            data: results
+        })
+    } catch (error) {
+        res.status(200).json({
+            status: 'error',
+            massage: "Get A Booking Error",
+            error: error.message
+        })
+    }
 };
