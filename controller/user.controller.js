@@ -1,4 +1,4 @@
-const { createAUserServices, getAllUserServices, getAUserByIdServices, updateAUserServices, deleteAUserService, getUserByEmailServices, getUserAsStudentServices } = require("../services/user.services");
+const { createAUserServices, getAllUserServices, getAUserByIdServices, updateAUserServices, deleteAUserService, getUserByEmailServices, getUserAsStudentServices, getUserAsTeacherServices, getUserAsAdminServices } = require("../services/user.services");
 
 
 // create a user -------
@@ -138,6 +138,44 @@ exports.getUserByEmail=async(req, res, next)=>{
 exports.getUserAsStudent = async(req, res, next)=>{
     try {
         const result= await getUserAsStudentServices()
+        res.status(200).json({
+            status: 'success',
+            massage: "Data inserted Successfully!",
+            data: result
+        })
+    }
+     catch (error) {
+        res.status(400).json({
+            status: 'error',
+            massage: "Data inserted Error",
+            error: error.message
+        })
+    }
+}
+
+// get all user as an teacher-----------------------
+exports.getUserAsTeacher = async(req, res, next)=>{
+    try {
+        const result= await getUserAsTeacherServices()
+        res.status(200).json({
+            status: 'success',
+            massage: "Data inserted Successfully!",
+            data: result
+        })
+    }
+     catch (error) {
+        res.status(400).json({
+            status: 'error',
+            massage: "Data inserted Error",
+            error: error.message
+        })
+    }
+}
+
+// get all user as an admin-----------------------
+exports.getUserAsAdmin = async(req, res, next)=>{
+    try {
+        const result= await getUserAsAdminServices()
         res.status(200).json({
             status: 'success',
             massage: "Data inserted Successfully!",

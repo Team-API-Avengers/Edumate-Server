@@ -40,8 +40,20 @@ exports.getUserByEmailServices = async (email) => {
     return result
 };
 
+// get all student---------------
 exports.getUserAsStudentServices=async()=>{
     const result = await UserModel.find({role:"Student"})
+    return result
+}
+
+// get all teacher ---------------------
+exports.getUserAsTeacherServices=async()=>{
+    const result = await UserModel.find({role:"Teacher"})
+    return result
+}
+// get all admin ---------------------
+exports.getUserAsAdminServices=async()=>{
+    const result = await UserModel.find({role:"Admin"})
     return result
 }
 
