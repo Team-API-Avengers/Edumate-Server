@@ -1,4 +1,4 @@
-const { createAUserServices, getAllUserServices, getAUserByIdServices, updateAUserServices, deleteAUserService, getUserByEmailServices } = require("../services/user.services");
+const { createAUserServices, getAllUserServices, getAUserByIdServices, updateAUserServices, deleteAUserService, getUserByEmailServices, getUserAsStudentServices } = require("../services/user.services");
 
 
 // create a user -------
@@ -126,6 +126,25 @@ exports.getUserByEmail=async(req, res, next)=>{
         })
     }
     catch (error) {
+        res.status(400).json({
+            status: 'error',
+            massage: "Data inserted Error",
+            error: error.message
+        })
+    }
+}
+
+// get user as an student ------------------------
+exports.getUserAsStudent = async(req, res, next)=>{
+    try {
+        const result= await getUserAsStudentServices()
+        res.status(200).json({
+            status: 'success',
+            massage: "Data inserted Successfully!",
+            data: result
+        })
+    }
+     catch (error) {
         res.status(400).json({
             status: 'error',
             massage: "Data inserted Error",
