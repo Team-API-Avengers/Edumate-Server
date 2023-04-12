@@ -10,6 +10,7 @@ router.route("/")
 router.route("/:id")
     .get(bookingController.getABookingInfo)
     .delete(bookingController.deleteBooking)
+    .patch(bookingController.updateAbooking)
 
 
 // export bookings routes

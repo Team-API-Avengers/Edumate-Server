@@ -27,3 +27,9 @@ exports.deleteBookingServices = async (id) => {
     const result = await Booking.deleteOne({ _id: id });
     return result;
 };
+
+// edit a booking ---------------
+exports.editAbookingServices = async(id,data)=>{
+    const result = await Booking.updateOne({_id: id},{$set: data})
+    return result
+}
