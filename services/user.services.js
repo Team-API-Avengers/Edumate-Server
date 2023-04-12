@@ -40,3 +40,8 @@ exports.getUserByEmailServices = async (email) => {
     return result
 };
 
+exports.getUserAsStudentServices=async()=>{
+    const result = await UserModel.find({role:"Student"})
+    return result
+}
+

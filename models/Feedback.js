@@ -25,6 +25,14 @@ const feedBackSchema = new mongoose.Schema({
     message: {
         type : String,
         required: [true, "Message field must be required"]
+    },
+    image:{
+        type: String,
+        required : true
+    },
+    rate : {
+        type :Number,
+        required : true
     }
 })
 

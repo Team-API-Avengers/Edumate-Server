@@ -14,6 +14,7 @@ router.route("/:id")
 router.route("/useremail/:email")
 .get(userController.getUserByEmail)
 
-
+router.route("/dash/student")
+.get(userController.getUserAsStudent)
 
 module.exports = router;
