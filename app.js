@@ -5,7 +5,8 @@ const tutorRouter = require("./routes/v1/tutor.route");
 const userRouter = require("./routes/v1/user.route");
 const blogRouter = require("./routes/v1/blog.route");
 const feedBackRouter = require("./routes/v1/feedback.route")
-const bookingRouter = require("./routes/v1/booking.route");
+const bookingRouter = require("./routes/v1/booking.route")
+
 
 
 
@@ -25,13 +26,12 @@ app.use("/api/v1/user", userRouter)
 app.use("/api/v1/blogs", blogRouter)
 
 
-// feedback api routes ----------------------------
+// feedback api ----------------------------
 app.use("/api/v1/feedback", feedBackRouter)
 
 
-// bookings api routes ---------------------------
-app.use("api/v1/bookings",bookingRouter)
-
+// booking routes -------------------
+app.use("/api/v1/bookings", bookingRouter)
 
 
 
