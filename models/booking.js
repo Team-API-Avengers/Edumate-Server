@@ -39,6 +39,10 @@ const bookingSchema = new mongoose.Schema({
             values: ["Science", "Arts", "Commerce"],
             massage: "background can't be others."
         }
+    },
+    fee: {
+        type: String,
+        required: true
     }
 });
 
