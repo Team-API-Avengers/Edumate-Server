@@ -31,7 +31,8 @@ app.use("/api/v1/feedback", feedBackRouter)
 console.log("ashik")
 
 
-
+// bookings route api---------------
+app.use("/api/v1/bookings",bookingRouter)
 
 // ---------- Happy Server ----------
 app.get("/", (req, res) => {
