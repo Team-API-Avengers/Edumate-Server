@@ -22,10 +22,14 @@ const userSchema = new mongoose.Schema({
     image: {
         type: String,
         required: true,
-        
+
     },
     phone: {
         type: Number,
+        required: true,
+    },
+    studentEmail: {
+        type: String,
         required: true,
     },
     role: {
@@ -36,7 +40,7 @@ const userSchema = new mongoose.Schema({
             massage: "role can't be others."
         }
     },
-  
+
 });
 
 const UserModel = mongoose.model('UserModel', userSchema)
