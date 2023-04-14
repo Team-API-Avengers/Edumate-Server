@@ -29,7 +29,14 @@ exports.deleteBookingServices = async (id) => {
 };
 
 // edit a booking ---------------
-exports.editAbookingServices = async(id,data)=>{
-    const result = await Booking.updateOne({_id: id},{$set: data})
+exports.editAbookingServices = async (id, data) => {
+    const result = await Booking.updateOne({ _id: id }, { $set: data })
     return result
-}
+};
+
+
+// get a booking by email -----------
+exports.getABookingByEmailServices = async (email) => {
+    const result = await Booking.find({ email: email });
+    return result
+};

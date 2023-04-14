@@ -1,4 +1,4 @@
-const { createBookingServices, getAllBookingsServices, getABookingInfoServices, deleteBookingServices, editAbookingServices } = require("../services/booking.services");
+const { createBookingServices, getAllBookingsServices, getABookingInfoServices, deleteBookingServices, editAbookingServices, getABookingByEmailServices } = require("../services/booking.services");
 
 // create a booking controller --
 exports.createBooking = async (req, res, next) => {
@@ -78,17 +78,17 @@ exports.deleteBooking = async (req, res, next) => {
 };
 
 // update a booking ----------------------
-exports.updateAbooking=async(req, res, next)=>{
+exports.updateAbooking = async (req, res, next) => {
     try {
-    const id = req.params.id 
-    const body = req.body
-    const result =await editAbookingServices(id,body)   
-    res.status(200).json({
-        status: 'success',
-        massage: "Delete Booking",
-        data: result
-    })
-    } 
+        const id = req.params.id
+        const body = req.body
+        const result = await editAbookingServices(id, body)
+        res.status(200).json({
+            status: 'success',
+            massage: "Delete Booking",
+            data: result
+        })
+    }
     catch (error) {
         res.status(400).json({
             status: "error",
@@ -96,4 +96,25 @@ exports.updateAbooking=async(req, res, next)=>{
             error: error.message
         })
     }
-}
+};
+
+
+
+// get a booking by getABookingByEmail ---
+exports.getABookingByEmail = async (req, res, next) => {
+    try {
+        const email = req.query.email;
+        const result = await getABookingByEmailServices(email);
+        res.status(200).json({
+            status: "success",
+            massage: "Get Booking by email",
+            data: result
+        })
+    } catch (error) {
+        res.status(400).json({
+            status: "error",
+            massage: "Get Booking by email Error.",
+            error: error.message
+        })
+    }
+};

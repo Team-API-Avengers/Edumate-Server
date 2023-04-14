@@ -7,10 +7,22 @@ router.route("/")
     .get(bookingController.getAllBookings)
 
 
+
+router.route("/email")
+    .get(bookingController.getABookingByEmail)
+
+
 router.route("/:id")
     .get(bookingController.getABookingInfo)
     .delete(bookingController.deleteBooking)
     .patch(bookingController.updateAbooking)
+
+
+
+
+
+
+
 
 
 // export bookings routes
