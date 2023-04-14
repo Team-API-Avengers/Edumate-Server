@@ -21,7 +21,6 @@ router.route("/:id")
 
 
 // search tutors from location -----
-
 router.route("/location/:search")
     .get(tutorController.getTutorByLocation)
 
