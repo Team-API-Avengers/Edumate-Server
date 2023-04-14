@@ -42,6 +42,10 @@ const bookingSchema = new mongoose.Schema({
     fee: {
         type: String,
         required: true
+    },
+    studentEmail: {
+        type: String,
+        required : true
     }
 });
 
