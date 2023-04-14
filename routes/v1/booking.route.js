@@ -20,8 +20,5 @@ router.route("/:id")
 
 
 
-
-
-
 // export bookings routes
 module.exports = router;
