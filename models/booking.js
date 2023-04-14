@@ -13,7 +13,6 @@ const bookingSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please provide a email address."],
         trim: true, // without spaces
-        unique: [true, "Please provide a unique email address."],
     },
     location: {
         type: String,
