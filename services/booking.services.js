@@ -37,6 +37,6 @@ exports.editAbookingServices = async (id, data) => {
 
 // get a booking by email -----------
 exports.getABookingByEmailServices = async (email) => {
-    const result = await Booking.find({ studentEmail: email });
+    const result = await Booking.find({ email: email });
     return result
 };

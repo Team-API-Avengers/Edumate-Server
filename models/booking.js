@@ -3,35 +3,35 @@ const mongoose = require("mongoose");
 
 
 const bookingSchema = new mongoose.Schema({
-    name: {
+    teachername: {
         type: String,
         trim: true, // without spaces
         minLenght: [3, "Name must be at least 3 characters."],
         maxLenght: [20, "Name is too long."],
     },
-    email: {
+    teacheremail: {
         type: String,
         required: [true, "Please provide a email address."],
         trim: true, // without spaces
     },
-    location: {
+    teacherlocation: {
         type: String,
         required: true,
         trim: true, // without spaces,
     },
-    phone: {
+    teacherphone: {
         type: Number,
         required: true,
     },
-    image: {
+    teacherimage: {
         type: String,
         required: true,
     },
-    experience: {
+    teacherexperience: {
         type: Number,
         required: true,
     },
-    background: {
+    teacherbackground: {
         type: String,
         required: true,
         enum: {
@@ -39,11 +39,11 @@ const bookingSchema = new mongoose.Schema({
             massage: "background can't be others."
         }
     },
-    fee: {
+    teacherfee: {
         type: String,
         required: true
     },
-    studentEmail: {
+    email: {
         type: String,
         required : true
     }
