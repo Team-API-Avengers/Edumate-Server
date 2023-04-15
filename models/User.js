@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema({
     },
     studentEmail: {
         type: String,
-        required: true,
+       
     },
     role: {
         type: String,
