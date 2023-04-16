@@ -43,10 +43,20 @@ const bookingSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    email: {
+    studentEmail: {
         type: String,
         required : true
+    },
+    studentName:{
+        type: String,
+        required : true
+    },
+    studentImage:{
+        type: String,
+        required: true,
     }
+},{
+    timestamps: true
 });
 
 
