@@ -40,3 +40,9 @@ exports.getABookingByEmailServices = async (email) => {
     const result = await Booking.find({ studentEmail: email });
     return result
 };
+
+// getBookingStudentServices------------
+exports.getBookingStudentServices=async(email)=>{
+    const result = await Booking.find({teacheremail: email})
+    return result
+}

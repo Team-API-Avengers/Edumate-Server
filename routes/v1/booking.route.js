@@ -6,9 +6,10 @@ router.route("/")
     .post(bookingController.createBooking)
     .get(bookingController.getAllBookings)
 
+router.route("/teacher/email")
+.get(bookingController.getBookingStudent)
 
-
-router.route("/email")
+router.route("/student/email")
     .get(bookingController.getABookingByEmail)
 
 

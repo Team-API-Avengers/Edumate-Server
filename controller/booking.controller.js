@@ -1,4 +1,4 @@
-const { createBookingServices, getAllBookingsServices, getABookingInfoServices, deleteBookingServices, editAbookingServices, getABookingByEmailServices } = require("../services/booking.services");
+const { createBookingServices, getAllBookingsServices, getABookingInfoServices, deleteBookingServices, editAbookingServices, getABookingByEmailServices, getBookingStudentServices } = require("../services/booking.services");
 
 // create a booking controller --
 exports.createBooking = async (req, res, next) => {
@@ -118,3 +118,23 @@ exports.getABookingByEmail = async (req, res, next) => {
         })
     }
 };
+
+// getBookingStudent api-----------
+exports.getBookingStudent=async(req, res, next)=>{
+    try {
+        const email = req.query.email 
+        const result = await getBookingStudentServices(email)
+        res.status(200).json({
+            status: "success",
+            massage: "Get Booking by email",
+            data: result
+        })
+    }
+     catch (error) {
+        res.status(400).json({
+            status: "error",
+            massage: "Get Booking by email Error.",
+            error: error.message
+        })
+    }
+}
