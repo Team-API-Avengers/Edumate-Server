@@ -1,4 +1,6 @@
 const SSLCommerzPayment = require('sslcommerz-lts')
+const dotenv = require("dotenv").config();
+
 
 // save a feedback -------------------------------
 exports.createApayment =  async (req, res) => {
@@ -39,24 +41,13 @@ exports.createApayment =  async (req, res) => {
       };
       console.log(req.body)
     
-      const sslcommerz = new SSLCommerzPayment(process.env.STORE_ID, process.env.STORE_PASS, false) //true for live default false for sandbox
-      sslcommerz.init(data).then(data => {
-    
-        //process the response that got from sslcommerz 
-        //https://developer.sslcommerz.com/doc/v4/#returned-parameters
-    
-        if (data?.GatewayPageURL) {
-          return res.status(200).redirect(data?.GatewayPageURL);
-        }
-        else {
-          return res.status(400).json({
-            message: "Session was not successful"
-          });
-        }
-        // let GatewayPageURL = apiResponse.GatewayPageURL
-        // res.redirect(GatewayPageURL)
-        // console.log('Redirecting to: ', GatewayPageURL)
-      })
+      const sslcz = new SSLCommerzPayment(process.env.STORE_ID, process.env.STORE_PASS, false)
+      sslcz.init(data).then(apiResponse => {
+          // Redirect the user to payment gateway
+          let GatewayPageURL = apiResponse.GatewayPageURL
+          res.send({url:GatewayPageURL})
+          console.log('Redirecting to: ', GatewayPageURL)
+      });
     }
   
   
@@ -82,7 +73,7 @@ exports.successPayment = async (req, res, next) => {
     catch (error) {
         res.status(400).json({
             status: 'error',
-            massage: "payment is no success",
+            massage: "payment is not success",
             error: error.message
         })
     }
@@ -93,7 +84,7 @@ exports.failurePayment = async (req, res, next) => {
         return res.status(200).json(
             {
               data: req.body,
-              message: 'Payment success'
+              message: 'Payment failed'
             }
           );
     }
@@ -111,14 +102,14 @@ exports.canclePayment = async (req, res, next) => {
         return res.status(200).json(
             {
               data: req.body,
-              message: 'Payment success'
+              message: 'Payment canceled'
             }
           );
     }
     catch (error) {
         res.status(400).json({
             status: 'error',
-            massage: "payment is failed",
+            massage: "payment is canceled",
             error: error.message
         })
     }
