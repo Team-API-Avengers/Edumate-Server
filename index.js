@@ -25,6 +25,3 @@ app.listen(port, () => {
     console.log(`App is running on port ${port}`.yellow.bold);
 });
 
-
-console.log("object");
-console.log("object");
