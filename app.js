@@ -7,6 +7,7 @@ const blogRouter = require("./routes/v1/blog.route");
 const feedBackRouter = require("./routes/v1/feedback.route")
 const bookingRouter = require("./routes/v1/booking.route");
 const paymentRouter = require("./routes/v1/payment.route")
+const testRouter = require("./routes/v1/test.route");
 
 
 
@@ -32,16 +33,27 @@ app.use("/api/v1/feedback", feedBackRouter)
 
 
 // bookings route api---------------
-app.use("/api/v1/bookings",bookingRouter)
+app.use("/api/v1/bookings", bookingRouter)
+
+
+// test route --------------------- 
+app.use("/api/v1/test", testRouter)
 
 
 // payment route --------------------------
-app.use("/api/v1/payment",paymentRouter)
+app.use("/api/v1/payment", paymentRouter)
 
 // ---------- Happy Server ----------
 app.get("/", (req, res) => {
     res.send("Route is working! YaY!");
 });
+
+
+
+
+
+
+
 
 
 module.exports = app;
