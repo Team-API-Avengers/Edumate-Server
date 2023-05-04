@@ -19,6 +19,8 @@ exports.getAllQuestions = async (req, res, next) => {
         })
     }
 };
+
+
 // exports.postAllQuestions = async (req, res, next) => {
 //     try {
 //         // get all questions
