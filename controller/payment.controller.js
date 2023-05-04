@@ -1,22 +1,19 @@
-const SSLCommerzPayment = require('sslcommerz-lts')
+const SSLCommerzPayment = require('sslcommerz-lts');
 const dotenv = require("dotenv").config();
-const Booking = require("../models/booking")
-
+const Booking = require("../models/booking");
+const Fees = require("../models/fees");
 
 
 
 // save a feedback -------------------------------
-exports.createAPyment = async (req, res) => {
+exports.createAPayment = async (req, res) => {
 
     try {
         const paymentInfo = req.body;
-
         const id = paymentInfo.id;
 
         const findTutorInfo = await Booking.findById({ _id: id });
         const transactionId = findTutorInfo.id.toString();
-
-
 
         const data = {
             total_amount: paymentInfo.teacherFee,
@@ -48,17 +45,19 @@ exports.createAPyment = async (req, res) => {
             ipn_url: `${process.env.ROOT}/ssl-payment-notification`,
         };
 
-        console.log(data);
-
-
-
         const sslcz = new SSLCommerzPayment(process.env.STORE_ID, process.env.STORE_PASS, false)
-        sslcz.init(data).then((apiResponse) => {
+        sslcz.init(data).then(async (apiResponse) => {
             // Redirect the user to payment gateway
             let GatewayPageURL = apiResponse.GatewayPageURL;
-            console.log(apiResponse);
+            // console.log(apiResponse);
+
+            const paymentDetails = await Fees.create({
+                ...paymentInfo,
+                transactionId,
+                paymentStatus: false,
+            });
+            console.log(paymentDetails);
            
-            
             res.send({ url: GatewayPageURL });
         });
     }

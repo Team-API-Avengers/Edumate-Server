@@ -3,7 +3,7 @@ const router = express.Router();
 const paymentController = require("../../controller/payment.controller")
 
 router.route("/ssl-request")
-    .post(paymentController.createAPyment)
+    .post(paymentController.createAPayment)
 
 //   payment successs ------------------------
 router.route("/ssl-payment-success")
