@@ -1,0 +1,290 @@
+[
+    {
+      "category": "Science",
+      "question": "What is the largest planet in our solar system?",
+      "options": ["Jupiter", "Saturn", "Neptune", "Uranus"],
+      "answer": "Jupiter"
+    },
+    {
+      "category": "Science",
+      "question": "What is the process by which plants convert light energy into chemical energy?",
+      "options": ["Photosynthesis", "Respiration", "Transpiration", "Absorption"],
+      "answer": "Photosynthesis"
+    },
+    {
+      "category": "Science",
+      "question": "What type of force holds an atom together?",
+      "options": ["Electromagnetic force", "Gravity", "Strong force", "Weak force"],
+      "answer": "Electromagnetic force"
+    },
+    {
+      "category": "Science",
+      "question": "What is the most abundant gas in Earth's atmosphere?",
+      "options": ["Nitrogen", "Oxygen", "Carbon dioxide", "Argon"],
+      "answer": "Nitrogen"
+    },
+    {
+      "category": "Science",
+      "question": "What is the smallest unit of matter?",
+      "options": ["Atom", "Molecule", "Proton", "Electron"],
+      "answer": "Atom"
+    },
+    
+    
+    
+     {  "category": "Science",
+      "question": "What is the smallest unit of matter?",
+      "options": ["Atom", "Molecule", "Electron", "Proton"],
+      "answer": "Atom"
+    },
+    { "category": "Science",
+      "question": "What is the largest organ in the human body?",
+      "options": ["Liver", "Lungs", "Skin", "Heart"],
+      "answer": "Skin"
+    },
+    { "category": "Science",
+      "question": "Which gas is most abundant in the Earth's atmosphere?",
+      "options": ["Nitrogen", "Oxygen", "Carbon dioxide", "Argon"],
+      "answer": "Nitrogen"
+    },
+    { "category": "Science",
+      "question": "What is the process by which plants make their own food?",
+      "options": ["Photosynthesis", "Cellular respiration", "Digestion", "Fermentation"],
+      "answer": "Photosynthesis"
+    },
+    { "category": "Science",
+      "question": "Which type of energy is produced by the sun?",
+      "options": ["Nuclear energy", "Solar energy", "Wind energy", "Hydro energy"],
+      "answer": "Solar energy"
+    },
+    { "category": "Science",
+      "question": "What is the largest mammal on Earth?",
+      "options": ["Elephant", "Giraffe", "Whale", "Hippopotamus"],
+      "answer": "Whale"
+    },
+    { "category": "Science",
+      "question": "What is the name of the largest bone in the human body?",
+      "options": ["Tibia", "Femur", "Radius", "Humerus"],
+      "answer": "Femur"
+    },
+    { "category": "Science",
+      "question": "What is the chemical symbol for gold?",
+      "options": ["Ag", "Fe", "Au", "Cu"],
+      "answer": "Au"
+    },
+    { "category": "Science",
+      "question": "What is the term for a substance that speeds up a chemical reaction?",
+      "options": ["Catalyst", "Accelerant", "Solvent", "Reactant"],
+      "answer": "Catalyst"
+    },
+    { "category": "Science",
+      "question": "What is the process by which water changes from a liquid to a gas?",
+      "options": ["Evaporation", "Condensation", "Sublimation", "Deposition"],
+      "answer": "Evaporation"
+    },
+    { "category": "Science",
+      "question": "What is the most abundant gas in the Earth's atmosphere?",
+      "options": ["Oxygen", "Carbon dioxide", "Nitrogen", "Argon"],
+      "answer": "Nitrogen"
+    },
+    { "category": "Science",
+      "question": "What is the name of the largest planet in our solar system?",
+      "options": ["Mars", "Jupiter", "Saturn", "Uranus"],
+      "answer": "Jupiter"
+    },
+    { "category": "Science",
+      "question": "What is the name of the first man to walk on the moon?",
+      "options": ["Buzz Aldrin", "Neil Armstrong", "Michael Collins", "Alan Shepard"],
+      "answer": "Neil Armstrong"
+    },
+    { "category": "Science",
+      "question": "What is the name of the particle that carries a positive electric charge?",
+      "options": ["Electron", "Proton", "Neutron", "Photon"],
+      "answer": "Proton"
+    },
+    { "category": "Science",
+      "question": "What is the name of the process by which a solid changes directly to a gas?",
+      "options": ["Evaporation", "Sublimation", "Condensation", "Deposition"],
+      "answer": "Sublimation"
+    },
+     {
+      "category": "Commerce",
+      "question": "What is the process of converting raw materials into finished products called?",
+      "options": ["Marketing", "Production", "Finance", "Operations"],
+      "answer": "Production"
+    },
+    {
+      "category": "Commerce",
+      "question": "What is the term for the money or property owned by a business?",
+      "options": ["Revenue", "Profit", "Asset", "Liability"],
+      "answer": "Asset"
+    },
+    {
+      "category": "Commerce",
+      "question": "What is the term for the process of introducing a new product to the market?",
+      "options": ["Market research", "Product development", "Product launch", "Marketing strategy"],
+      "answer": "Product launch"
+    },
+    {
+      "category": "Commerce",
+      "question": "What is the term for the way a company presents itself to the public?",
+      "options": ["Advertising", "Public relations", "Brand identity", "Corporate culture"],
+      "answer": "Brand identity"
+    },
+    {
+      "category": "Commerce",
+      "question": "What is the term for the process of setting goals and objectives for a business?",
+      "options": ["Business planning", "Financial analysis", "Marketing strategy", "Operations management"],
+      "answer": "Business planning"
+    },
+    {
+      "category": "Commerce",
+      "question": "What is the term for the difference between a company's revenue and expenses?",
+      "options": ["Profit", "Revenue", "Gross margin", "Net income"],
+      "answer": "Net income"
+    },
+    {
+      "category": "Commerce",
+      "question": "What is the term for the resources that a business uses to produce goods or services?",
+      "options": ["Capital", "Revenue", "Assets", "Liabilities"],
+      "answer": "Capital"
+    },
+    {
+      "category": "Commerce",
+      "question": "What is the term for the process of buying and selling goods and services over the internet?",
+      "options": ["E-commerce", "Online marketing", "Digital advertising", "Social media"],
+      "answer": "E-commerce"
+    },
+    {
+      "category": "Commerce",
+      "question": "What is the term for the process of analyzing financial statements to evaluate a company's performance?",
+      "options": ["Financial analysis", "Market research", "Marketing strategy", "Operations management"],
+      "answer": "Financial analysis"
+    },
+    {
+      "category": "Commerce",
+      "question": "What is the term for the value of a company's total assets minus its total liabilities?",
+      "options": ["Net worth", "Gross profit", "Gross margin", "Net income"],
+      "answer": "Net worth"
+    },
+    {
+      "category": "Commerce",
+      "question": "What is the term for the process of dividing a market into smaller groups based on similar needs and characteristics?",
+      "options": ["Market segmentation", "Market research", "Marketing mix", "Product differentiation"],
+      "answer": "Market segmentation"
+    },
+    {
+      "category": "Commerce",
+      "question": "What is the term for the amount of money that a business has left over after paying all of its expenses?",
+      "options": ["Revenue", "Profit", "Gross margin", "Net income"],
+      "answer": "Profit"
+    },
+    {
+      "category": "Commerce",
+      "question": "What is the term for the process of promoting and selling products or services?",
+      "options": ["Marketing", "Advertising", "Public relations", "Sales"],
+      "answer": "Marketing"
+  },
+      {
+      "category": "Arts",
+      "question": "Who painted 'The Starry Night'?",
+      "options": ["Pablo Picasso", "Vincent van Gogh", "Claude Monet", "Salvador Dali"],
+      "answer": "Vincent van Gogh"
+    },
+    {
+      "category": "Arts",
+      "question": "Who is the author of the novel 'To Kill a Mockingbird'?",
+      "options": ["Jane Austen", "Harper Lee", "Ernest Hemingway", "F. Scott Fitzgerald"],
+      "answer": "Harper Lee"
+    },
+    {
+      "category": "Arts",
+      "question": "Who wrote the 'Four Seasons'?",
+      "options": ["Ludwig van Beethoven", "Johann Sebastian Bach", "Antonio Vivaldi", "Wolfgang Amadeus Mozart"],
+      "answer": "Antonio Vivaldi"
+    },
+    {
+      "category": "Arts",
+      "question": "Who is the author of the 'Harry Potter' series?",
+      "options": ["J.R.R. Tolkien", "J.K. Rowling", "George R.R. Martin", "C.S. Lewis"],
+      "answer": "J.K. Rowling"
+    },
+    {
+      "category": "Arts",
+      "question": "Who wrote the play 'Romeo and Juliet?",
+      "options": ["William Shakespeare", "Tennessee Williams", "Arthur Miller", "Eugene O'Neill"],
+      "answer": "William Shakespeare"
+    },
+    {
+      "category": "Arts",
+      "question": "Who composed the famous 'Ride of the Valkyries'?",
+      "options": ["Richard Wagner", "Johann Strauss II", "Giacomo Puccini", "Georges Bizet"],
+      "answer": "Richard Wagner"
+    },
+    {
+      "category": "Arts",
+      "question": "Who painted the famous 'Water Lilies' series?",
+      "options": ["Claude Monet", "Edgar Degas", "Auguste Renoir", "Paul Cezanne"],
+      "answer": "Claude Monet"
+    },
+    {
+      "category": "Arts",
+      "question": "Who directed the movie 'Psycho'?",
+      "options": ["Stanley Kubrick", "Alfred Hitchcock", "Martin Scorsese", "Steven Spielberg"],
+      "answer": "Alfred Hitchcock"
+    },
+    {
+      "category": "Arts",
+      "question": "Who is the author of the novel '1984'?",
+      "options": ["Aldous Huxley", "Ray Bradbury", "George Orwell", "H.G. Wells"],
+      "answer": "George Orwell"
+    },
+    {
+      "category": "Arts",
+      "question": "Who composed the famous 'Moonlight Sonata'?",
+      "options": ["Johannes Brahms", "Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Franz Schubert"],
+      "answer": "Ludwig van Beethoven"
+    },
+    {
+      "category": "Arts",
+      "question": "Who painted 'The Persistence of Memory'?",
+      "options": ["Salvador Dali", "Pablo Picasso", "Vincent van Gogh", "Claude Monet"],
+      "answer": "Salvador Dali"
+    },
+    {
+      "category": "Arts",
+      "question": "Who wrote the play 'The Importance of Being Earnest'?",
+      "options": ["George Bernard Shaw", "Oscar Wilde", "Samuel Beckett", "Tennessee Williams"],
+      "answer": "Oscar"
+      },
+    {
+      "category": "Arts",
+      "question": "Who painted the Mona Lisa?",
+      "options": ["Leonardo da Vinci", "Vincent van Gogh", "Pablo Picasso", "Claude Monet"],
+      "answer": "Leonardo da Vinci"
+    },
+    {
+      "category": "Arts",
+      "question": "What is the name of Vincent van Gogh's famous painting of a starry night?",
+      "options": ["Starry Night", "The Starry Sky", "The Night Sky", "Starry Night Over the Rhone"],
+      "answer": "Starry Night"
+    },
+    {
+      "category": "Arts",
+      "question": "Who wrote the play 'Hamlet'?",
+      "options": ["William Shakespeare", "George Bernard Shaw", "Samuel Beckett", "Oscar Wilde"],
+      "answer": "William Shakespeare"
+    },
+    {
+      "category": "Arts",
+      "question": "Who composed the famous opera 'The Barber of Seville'?",
+      "options": ["Gioachino Rossini", "Wolfgang Amadeus Mozart", "Giuseppe Verdi", "Ludwig van Beethoven"],
+      "answer": "Gioachino Rossini"
+    },
+    {
+      "category": "Arts",
+      "question": "Who directed the movie 'The Godfather'?",
+      "options": ["Francis Ford Coppola", "Martin Scorsese", "Steven Spielberg", "Alfred Hitchcock"],
+      "answer": "Francis Ford Coppola"
+    }
+  ]
