@@ -1,9 +1,11 @@
-const router = require("express").Router();
+const express = require("express");
+const router = express.Router();
 const testController = require("../../controller/test.controller");
 
 
 
-router.router("/")
+router.route("/")
+// .post(testController.postAllQuestions)
     .get(testController.getAllQuestions)
 
 
