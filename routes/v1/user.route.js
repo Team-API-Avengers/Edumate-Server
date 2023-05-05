@@ -12,15 +12,16 @@ router.route("/:id")
     .delete(userController.deleteAUser)
 
 router.route("/useremail/:email")
-.get(userController.getUserByEmail)
+    .get(userController.getUserByEmail)
 
 router.route("/dash/student")
-.get(userController.getUserAsStudent)
+    .get(userController.getUserAsStudent)
 
 router.route("/dash/teacher")
-.get(userController.getUserAsTeacher)
+    .get(userController.getUserAsTeacher)
 
 router.route("/dash/admin")
-.get(userController.getUserAsAdmin)
+    .get(userController.getUserAsAdmin)
 
+// export User routes
 module.exports = router;
