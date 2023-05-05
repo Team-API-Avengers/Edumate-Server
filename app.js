@@ -41,7 +41,7 @@ app.use("/api/v1/bookings", bookingRouter)
 app.use("/api/v1/test", testRouter)
 
 // post route --------------------- 
-app.use("/api/v1/post", postRouter)
+app.use("/api/v1/searching-teacher", postRouter)
 
 
 // payment route --------------------------

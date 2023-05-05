@@ -1,10 +1,11 @@
-const router = require("express").Route();
-const postController = require("../../controller/post.controller");
+const router = require("express").Router();
+const postController = require("../../controller/post.controller")
 
 
-router.router("/")
-    .get(postController.createAPost)
 
+router.route("/")
+    .post(postController.createAPost)
+    .get(postController.getSubmittedData)
 
 
 

@@ -30,8 +30,11 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-}, {
-    timestamps: true
+    date: {
+        type: Date,
+        default: Date.now
+    }
+
 })
 
 const Post = mongoose.model('Post', postSchema)
