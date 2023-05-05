@@ -8,6 +8,7 @@ const feedBackRouter = require("./routes/v1/feedback.route")
 const bookingRouter = require("./routes/v1/booking.route");
 const paymentRouter = require("./routes/v1/payment.route")
 const testRouter = require("./routes/v1/test.route");
+const postRouter = require("./routes/v1/post.route");
 
 
 
@@ -38,6 +39,9 @@ app.use("/api/v1/bookings", bookingRouter)
 
 // test route --------------------- 
 app.use("/api/v1/test", testRouter)
+
+// post route --------------------- 
+app.use("/api/v1/post", postRouter)
 
 
 // payment route --------------------------
