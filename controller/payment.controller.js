@@ -10,9 +10,7 @@ exports.createAPayment = async (req, res) => {
 
     try {
         const paymentInfo = req.body;
-        const id = paymentInfo.id;
-
-        const findTutorInfo = await Booking.findById({ _id: id });
+        const findTutorInfo = await Booking.findById({ _id: paymentInfo.id });
         const transactionId = findTutorInfo.id.toString();
 
         const data = {
