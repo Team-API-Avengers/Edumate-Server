@@ -2,6 +2,7 @@ const SSLCommerzPayment = require('sslcommerz-lts');
 const dotenv = require("dotenv").config();
 const Booking = require("../models/booking");
 const Fees = require("../models/fees");
+const { createAPaymentServices, successPaymentServices, failurePaymentServices, notificationPaymentServices } = require('../services/fees.services');
 
 
 
@@ -10,15 +11,17 @@ exports.createAPayment = async (req, res) => {
 
     try {
         const paymentInfo = req.body;
-        const findTutorInfo = await Booking.findById({ _id: paymentInfo.id });
+        const id = paymentInfo.id
+        const findTutorInfo = await createAPaymentServices(id);
+
         const transactionId = findTutorInfo.id.toString();
 
         const data = {
             total_amount: paymentInfo.teacherFee,
             currency: 'BDT',
             tran_id: transactionId,
-            success_url: `${process.env.ROOT}/ssl-payment-success`,
-            fail_url: `${process.env.ROOT}/ssl-payment-failure`,
+            success_url: `${process.env.ROOT}/ssl-payment-success?transactionId=${transactionId}`,
+            fail_url: `${process.env.ROOT}/ssl-payment-failure?transactionId=${transactionId}`,
             cancel_url: `${process.env.ROOT}/ssl-payment-cancel`,
             ipn_url: `${process.env.ROOT}/ssl-payment-ipn`,
             shipping_method: 'No',
@@ -54,8 +57,7 @@ exports.createAPayment = async (req, res) => {
                 transactionId,
                 paymentStatus: false,
             });
-            console.log(paymentDetails);
-           
+
             res.send({ url: GatewayPageURL });
         });
     }
@@ -68,75 +70,124 @@ exports.createAPayment = async (req, res) => {
     }
 }
 
+
 // payment success ----------------------------
 exports.successPayment = async (req, res, next) => {
     try {
-        return res.status(200).json(
-            {
-                data: req.body,
-                message: 'Payment success'
-            }
-        );
+
+        const { transactionId } = req.query;
+
+        if (!transactionId) {
+            return res.redirect(`${process.env.CLIENT_URL}/payment/fail`);
+        }
+        const result = await successPaymentServices(transactionId);
+
+        if (result.modifiedCount > 0) {
+            // res.redirect(`${process.env.CLIENT_URL}/dashboard/payment/success?transactionId=${transactionId}`);
+            res.location(`${process.env.CLIENT_URL}/dashboard/payment/success?transactionId=${transactionId}`);
+        }
+
+        return res.status(200).json({
+            status: 'success',
+            massage: "Success Status Successfully Updated",
+            data: result
+        })
     }
     catch (error) {
         res.status(400).json({
             status: 'error',
-            massage: "payment is not success",
+            massage: "Success Status Successfully Not Updated",
             error: error.message
         })
     }
 };
+
+
 // failer success ----------------------------
 exports.failurePayment = async (req, res, next) => {
     try {
+        const { transactionId } = req.query;
+
+        if (!transactionId) {
+            return res.redirect(`${process.env.CLIENT_URL}/dashboard/payment/fail`);
+        }
+
+        const result = await failurePaymentServices(transactionId);
+
+        // const result = await orderCollection.deleteOne({ transactionId });
+
+        if (result.deletedCount) {
+            res.redirect(`${process.env.CLIENT_URL}/dashboard/payment/fail`);
+        }
+
+
         return res.status(200).json(
             {
                 data: req.body,
-                message: 'Payment failed'
+                message: 'Payment Failed Deleted Successfully.',
+                result: result
             }
         );
     }
     catch (error) {
         res.status(400).json({
             status: 'error',
-            massage: "payment is failed",
+            massage: "Payment Failed Not Deleted Successfully",
             error: error.message
         })
     }
 };
-// cancle success ----------------------------
-exports.canclePayment = async (req, res, next) => {
+
+
+// cancel success ----------------------------
+exports.cancelPayment = async (req, res, next) => {
     try {
+        const { transactionId } = req.query;
+
+        if (!transactionId) {
+            return res.redirect(`${process.env.CLIENT_URL}/dashboard/my-Teachers`);
+        }
+
         return res.status(200).json(
             {
                 data: req.body,
-                message: 'Payment canceled'
+                message: 'Payment Cancel Successfully.',
+                result: result
             }
         );
     }
     catch (error) {
         res.status(400).json({
             status: 'error',
-            massage: "payment is canceled",
+            massage: "Payment Cancel Successfully Error",
             error: error.message
         })
     }
 };
+
+
 // notification ----------------------------
 exports.notificationPayment = async (req, res, next) => {
     try {
+        const { transactionId } = req.params;
+        const result = await notificationPaymentServices(transactionId);
+
+        console.log(result);
         return res.status(200).json(
             {
                 data: req.body,
-                message: 'Payment success'
+                message: 'Payment Successful Notification.',
+                result: result
+            }
+        );
+    } catch (error) {
+        return res.status(400).json(
+            {
+                data: req.body,
+                message: 'Payment Successful Notification Error.',
+                result: result
             }
         );
     }
-    catch (error) {
-        res.status(400).json({
-            status: 'error',
-            massage: "payment is failed",
-            error: error.message
-        })
-    }
+
 };

@@ -45,6 +45,9 @@ const paymentSchema = new mongoose.Schema({
     paymentStatus: {
         type: Boolean,
         required: true
+    },
+    paidAt: {
+        type: Date
     }
 }, {
     timestamps: true
