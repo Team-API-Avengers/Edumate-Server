@@ -83,8 +83,7 @@ exports.successPayment = async (req, res, next) => {
         const result = await successPaymentServices(transactionId);
 
         if (result.modifiedCount > 0) {
-            // res.redirect(`${process.env.CLIENT_URL}/dashboard/payment/success?transactionId=${transactionId}`);
-            res.location(`${process.env.CLIENT_URL}/dashboard/payment/success?transactionId=${transactionId}`);
+            return res.redirect(`${process.env.CLIENT_URL}/dashboard/payment/success?transactionId=${transactionId}`);
         }
 
         return res.status(200).json({
@@ -103,7 +102,7 @@ exports.successPayment = async (req, res, next) => {
 };
 
 
-// failer success ----------------------------
+// failure success ----------------------------
 exports.failurePayment = async (req, res, next) => {
     try {
         const { transactionId } = req.query;
