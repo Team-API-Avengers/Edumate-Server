@@ -5,21 +5,24 @@ const paymentController = require("../../controller/payment.controller")
 router.route("/ssl-request")
     .post(paymentController.createAPayment)
 
-//   payment successs ------------------------
+//   payment success -----------------------------
 router.route("/ssl-payment-success")
     .post(paymentController.successPayment)
 
 
-// //   payment failure ------------------------------
+//   payment failure ------------------------------
 router.route("/ssl-payment-failure")
     .post(paymentController.failurePayment)
 
-// //   cancel payment -------------------------------
+//   cancel payment -------------------------------
 router.route("/ssl-payment-cancel")
-    .post(paymentController.canclePayment)
+    .post(paymentController.cancelPayment)
 
-//    // payment ipn -------------------------
-router.route("/ssl-payment-ipn")
-    .post(paymentController.notificationPayment)
+
+//  payment notification --------------------------
+router.route("/ssl-payment-notification/:transactionId")
+    .get(paymentController.notificationPayment)
+
+
 
 module.exports = router;
