@@ -5,31 +5,34 @@ const commentSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-
+    postId: {
+        type: String,
+        required: true
+    },
     authorEmail: {
         type: String,
         required: true
     },
 
     authorImage: {
-        type : String,
-        required:true
-    },
-    studentName:{
         type: String,
-        required : true
+        required: true
     },
-    studentEmail : {
-        type :String,
-        required : true
-    },
-    studentImage:{
-        type : String,
-        required:true
-    },
-    comment:{
+    studentName: {
         type: String,
-        required:true
+        required: true
+    },
+    studentEmail: {
+        type: String,
+        required: true
+    },
+    studentImage: {
+        type: String,
+        required: true
+    },
+    comment: {
+        type: String,
+        required: true
 
     },
     date: {
@@ -38,6 +41,6 @@ const commentSchema = new mongoose.Schema({
     }
 })
 
-const commentModal = mongoose.model("commentModal",commentSchema)
+const commentModal = mongoose.model("commentModal", commentSchema)
 
 module.exports = commentModal;

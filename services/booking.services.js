@@ -1,15 +1,27 @@
 const Booking = require("../models/booking");
 
 
-// create a new booking ----
+// create a new booking only one time ----
 exports.createBookingServices = async (data) => {
-    const bookedData = await Booking.find({_id : _id})
-if(bookedData){
-return "already booked"
-}
-    else{
-    const result = await Booking.create(data);
-    return result;
+
+    if (data) {
+        const bookedData = await Booking.findOne({
+            $and: [
+                { teacheremail: data.teacheremail },
+                { studentEmail: data.studentEmail }
+            ]
+        });
+
+        console.log(bookedData);
+        // const bookedData = await Booking.findOne({ teacheremail: data.teacheremail, studentEmail: data.studentEmail })
+        if (bookedData) {
+            const result = "already booked";
+            return result
+        }
+        else {
+            const result = await Booking.create(data);
+            return result;
+        }
     }
 };
 
@@ -48,7 +60,7 @@ exports.getABookingByEmailServices = async (email) => {
 };
 
 // getBookingStudentServices------------
-exports.getBookingStudentServices=async(email)=>{
-    const result = await Booking.find({teacheremail: email})
+exports.getBookingStudentServices = async (email) => {
+    const result = await Booking.find({ teacheremail: email })
     return result
 }
