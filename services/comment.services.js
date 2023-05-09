@@ -8,6 +8,6 @@ exports.createCommentServices = async (data) => {
 
 // get a booking info  -----
 exports.getAcommentServices = async (id) => {
-    const result = await comment.findOne({ _id: id });
+    const result = await comment.findOne({ postId: id });
     return result;
 };
