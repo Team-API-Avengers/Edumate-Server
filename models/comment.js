@@ -43,4 +43,5 @@ const commentSchema = new mongoose.Schema({
 
 const commentModal = mongoose.model("commentModal", commentSchema)
 
+// exports the commentModal
 module.exports = commentModal;
