@@ -9,6 +9,7 @@ const bookingRouter = require("./routes/v1/booking.route");
 const paymentRouter = require("./routes/v1/payment.route")
 const testRouter = require("./routes/v1/test.route");
 const postRouter = require("./routes/v1/post.route");
+const commentRouter = require("./routes/v1/comment.route")
 
 
 
@@ -46,6 +47,10 @@ app.use("/api/v1/searching-teacher", postRouter)
 
 // payment route --------------------------
 app.use("/api/v1/payment", paymentRouter)
+
+// comment route-----------------------------
+app.use("/api/v1/comment",commentRouter)
+
 
 // ---------- Happy Server ----------
 app.get("/", (req, res) => {

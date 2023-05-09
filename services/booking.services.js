@@ -3,8 +3,14 @@ const Booking = require("../models/booking");
 
 // create a new booking ----
 exports.createBookingServices = async (data) => {
+    const bookedData = await Booking.find({_id : _id})
+if(bookedData){
+return "already booked"
+}
+    else{
     const result = await Booking.create(data);
     return result;
+    }
 };
 
 
