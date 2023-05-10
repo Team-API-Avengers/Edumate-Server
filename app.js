@@ -10,6 +10,7 @@ const paymentRouter = require("./routes/v1/payment.route")
 const testRouter = require("./routes/v1/test.route");
 const postRouter = require("./routes/v1/post.route");
 const commentRouter = require("./routes/v1/comment.route")
+const tutorTestRouter= require("./routes/v1/tutorTest.route")
 
 
 
@@ -51,7 +52,8 @@ app.use("/api/v1/payment", paymentRouter)
 // comment route-----------------------------
 app.use("/api/v1/comment",commentRouter)
 
-
+// tutor test ------------------------------
+app.use("/api/v1/tutortest",tutorTestRouter)
 // ---------- Happy Server ----------
 app.get("/", (req, res) => {
     res.send("Route is working! YaY!");
