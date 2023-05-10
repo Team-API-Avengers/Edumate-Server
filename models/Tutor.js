@@ -53,6 +53,14 @@ const tutorSchema = new mongoose.Schema({
     image: {
         type: String,
         required: true,
+    },
+    gender: {
+        type : String,
+        required : true
+    },
+    qualification :{
+        type : String,
+        required : true
     }
 },  {
     timestamps: true,
