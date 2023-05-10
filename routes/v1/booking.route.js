@@ -7,7 +7,7 @@ router.route("/")
     .get(bookingController.getAllBookings)
 
 router.route("/teacher/email")
-.get(bookingController.getBookingStudent)
+    .get(bookingController.getBookingStudent)
 
 router.route("/student/email")
     .get(bookingController.getABookingByEmail)
