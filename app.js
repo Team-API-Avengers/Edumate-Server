@@ -11,6 +11,7 @@ const testRouter = require("./routes/v1/test.route");
 const postRouter = require("./routes/v1/post.route");
 const commentRouter = require("./routes/v1/comment.route")
 const tutorTestRouter= require("./routes/v1/tutorTest.route")
+const assesmentRouter = require("./routes/v1/assesment.route")
 
 
 
@@ -54,6 +55,11 @@ app.use("/api/v1/comment",commentRouter)
 
 // tutor test ------------------------------
 app.use("/api/v1/tutortest",tutorTestRouter)
+
+// assement route -----------------------
+app.use("/api/v1/assesment",assesmentRouter)
+
+
 // ---------- Happy Server ----------
 app.get("/", (req, res) => {
     res.send("Route is working! YaY!");
